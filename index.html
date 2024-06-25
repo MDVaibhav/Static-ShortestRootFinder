@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolhapur Municipal Transport</title>
+   <link rel="Stylesheet" href="./Style.css">
+</head>
+
+<body>
+    <!-- Header and Navigation -->
+    <div class="header">
+        <span>Kolhapur Municipal Transport</span>
+    </div>
+
+    <nav>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('route')">Find Shortest Route</a>
+        <a href="#" onclick="showPage('kmtStops')">KMT Stops</a>
+        <a href="#" onclick="showPage('admin')">Admin Login</a>
+        <!-- Added Admin Login button -->
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="content active">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide"><img src="image1.jpg" alt="Image 1"></div>
+                <div class="slide"><img src="image2.jpg" alt="Image 2"></div>
+                <div class="slide"><img src="image3.jpg" alt="Image 3"></div>
+                <div class="slide"><img src="kmt.jpg" alt="Image 4"></div>
+                <div class="slide"><img src="kolhapur-kmt.jpg" alt="Image 5"></div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">❮</button>
+            <button class="next" onclick="moveSlide(1)">❯</button>
+        </div>
+    </div>
+
+    <!-- About, Route, and Admin Pages -->
+    <div id="about" class="content">
+        <h2>About Us</h2>
+        <p>This is the about us page content.</p>
+    </div>
+
+    <div id="route" class="content">
+        <div class="container">
+            <h2>Find Shortest Route</h2>
+            <form id="routeForm">
+                <label for="source">Current Location:</label>
+                <input type="text" id="source" name="source" required>
+                <label for="destination">Destination:</label>
+                <input type="text" id="destination" name="destination" required>
+                <button type="button" class="findbtn" onclick="findShortestRoute()">Find Route</button>
+            </form>
+            <div id="routeResult"></div>
+        </div>
+    </div>
+
+    <div id="kmtStops" class="content">
+        <h2>KMT Stops</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15287.155293822738!2d74.20452905541991!3d16.68744770000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc10008a141f53d%3A0x2f70b51573c53966!2sKMT%20BUS%20STOP!5e0!3m2!1sen!2sin!4v1710918720924!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div id="admin" class="content">
+        <div class="container">
+            <!-- Admin Login Form -->
+            <div id="admin-login">
+                <h2>Admin Login</h2>
+                <form>
+                    <label for="admin-username">Username:</label>
+                    <input type="text" id="admin-username" name="admin-username" required>
+                    <label for="admin-password">Password:</label>
+                    <input type="password" id="admin-password" name="admin-password" required>
+                    <input type="submit" value="Login">
+                </form>
+                <div class="toggle-link">
+                    <p>Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a></p>
+                </div>
+            </div>
+
+            <!-- Admin Sign Up Form -->
+            <div id="signup">
+                <h2>Admin Sign Up</h2>
+                <form>
+                    <label for="signup-username">Username:</label>
+                    <input type="text" id="signup-username" name="signup-username" required>
+                    <label for="signup-email">Email:</label>
+                    <input type="text" id="signup-email" name="signup-email" required>
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" name="signup-password" required>
+                    <input type="submit" value="Sign Up">
+                </form>
+                <div class="toggle-link">
+                    <p>Already have an account? <a href="#" onclick="toggleForm()">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./Script.js"></script>
+
+</html>
